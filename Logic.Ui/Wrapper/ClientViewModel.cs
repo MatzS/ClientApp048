@@ -11,27 +11,27 @@ namespace De.HsFlensburg.ClientApp048.Logic.Ui.Wrapper
     public class ClientViewModel: ViewModelBase<Client>
     {
         private int id;
-        private Client myClient = new Client();
 
-        public ClientViewModel(Client client)
-        {
-            this.myClient = client;
-        }
-        public ClientViewModel() 
-        { 
-        }
         public int Id
         {
-            get { return myClient.Id; }
-            set { myClient.Id = value; }
+            get {
+                return Model.Id;
+            }
+            set { 
+                Model.Id = value;
+                OnPropertyChanged("Id");
+            }
         }
 
         private String name;
 
         public String Name
         {
-            get { return myClient.Name; }
-            set { myClient.Name = value; }
+            get { return Model.Name; }
+            set { 
+                Model.Name = value;
+                OnPropertyChanged("Name");
+            }
         }
 
         public override void NewModelAssigned()

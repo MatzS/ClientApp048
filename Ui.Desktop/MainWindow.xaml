@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp048.Ui.Desktop"
         xmlns:viewModel="clr-namespace:De.HsFlensburg.ClientApp048.Logic.Ui.Wrapper;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="120" Width="500">
+        Title="MainWindow" Height="300" Width="500">
     <Window.Resources>
         <viewModel:ClientCollectionViewModel x:Key="myList"></viewModel:ClientCollectionViewModel>
     </Window.Resources>
@@ -21,6 +21,7 @@
             <Label VerticalAlignment="Center" HorizontalAlignment="Right">Name</Label>
             <TextBox VerticalAlignment="Center" Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Name}"></TextBox>
             <Button Click="DebugMainWindow">Debug MainWindow-Object</Button>
+            <Button Click="Button_Click">Rename First Item</Button>
         </UniformGrid>
         <DataGrid Grid.Column="1" Name="myDataGrid" ItemsSource="{Binding Source={StaticResource myList}}">
         </DataGrid>
