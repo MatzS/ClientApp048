@@ -2,6 +2,7 @@
 using De.HsFlensburg.ClientApp048.Logic.Ui.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,15 @@ namespace De.HsFlensburg.ClientApp048.Logic.Ui.Wrapper
     {
         public override void NewModelAssigned()
         {
-            throw new NotImplementedException();
+            foreach(var cvm in this)
+            {
+                var modelPropChanged = cvm.Model as INotifyPropertyChanged;
+                if(modelPropChanged != null)
+                {
+                    //????
+                    modelPropChanged.PropertyChanged += cvm.PropertyChanged;
+                }
+            }
         }
     }
 }

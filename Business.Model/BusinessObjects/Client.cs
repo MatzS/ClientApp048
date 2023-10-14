@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp048.Business.Model.BusinessObjects
 {
+    [Serializable]
     public class Client : INotifyPropertyChanged
     {
         private int id;
@@ -28,7 +29,7 @@ namespace De.HsFlensburg.ClientApp048.Business.Model.BusinessObjects
             }
         }
 
-
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)

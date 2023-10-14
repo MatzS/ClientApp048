@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp048.Ui.Desktop"
         xmlns:viewModel="clr-namespace:De.HsFlensburg.ClientApp048.Logic.Ui.Wrapper;assembly=Logic.Ui"
+        xmlns:viewmodels ="clr-namespace:De.HsFlensburg.ClientApp048.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
     <Window.Resources>
-        <viewModel:ClientCollectionViewModel x:Key="myList"></viewModel:ClientCollectionViewModel>
+        <viewmodels:MainWindowViewModel x:Key="myViewModel"></viewmodels:MainWindowViewModel>
     </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource myViewModel}"></Binding>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -20,10 +24,10 @@
             <TextBox VerticalAlignment="Center" Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Id}"></TextBox>
             <Label VerticalAlignment="Center" HorizontalAlignment="Right">Name</Label>
             <TextBox VerticalAlignment="Center" Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Name}"></TextBox>
-            <Button Click="DebugMainWindow">Debug MainWindow-Object</Button>
-            <Button Click="Button_Click">Rename First Item</Button>
+            <Button Command="{Binding RenameValueInModelCommand}">Rename First Item</Button>
+            <Button Click="OpenClientWindow">OpenClientWindow</Button>
         </UniformGrid>
-        <DataGrid Grid.Column="1" Name="myDataGrid" ItemsSource="{Binding Source={StaticResource myList}}">
+        <DataGrid Grid.Column="1" Name="myDataGrid" ItemsSource="{Binding Path=MyList}">
         </DataGrid>
     </Grid>
 </Window>
