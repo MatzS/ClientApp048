@@ -56,6 +56,10 @@
       <Project>{36a9eaee-49b9-40a4-898a-1a539dfd0ba9}</Project>
       <Name>Business.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Services.SerializationService\Services.SerializationService.csproj">
+      <Project>{df442fd1-6075-4d7b-8390-1576147e653b}</Project>
+      <Name>Services.SerializationService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
