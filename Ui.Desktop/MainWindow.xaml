@@ -19,13 +19,15 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <UniformGrid Grid.Column="0" Rows="3">
+        <UniformGrid Grid.Column="0" Rows="4">
             <Label VerticalAlignment="Center" HorizontalAlignment="Right">Identifier</Label>
             <TextBox VerticalAlignment="Center" Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Id}"></TextBox>
             <Label VerticalAlignment="Center" HorizontalAlignment="Right">Name</Label>
             <TextBox VerticalAlignment="Center" Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Name}"></TextBox>
             <Button Command="{Binding RenameValueInModelCommand}">Rename First Item</Button>
             <Button Click="OpenClientWindow">OpenClientWindow</Button>
+            <Button Command="{Binding SaveCommannd}">Save</Button>
+            <Button Command="{Binding LoadCommand}">Load</Button>
         </UniformGrid>
         <DataGrid Grid.Column="1" Name="myDataGrid" ItemsSource="{Binding Path=MyList}">
         </DataGrid>
