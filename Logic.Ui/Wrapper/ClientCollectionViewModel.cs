@@ -19,7 +19,7 @@ namespace De.HsFlensburg.ClientApp048.Logic.Ui.Wrapper
                 if(modelPropChanged != null)
                 {
                     //????
-                    modelPropChanged.PropertyChanged += cvm.O;
+                    //modelPropChanged.PropertyChanged += cvm.PropertyChanged;
                 }
             }
         }
