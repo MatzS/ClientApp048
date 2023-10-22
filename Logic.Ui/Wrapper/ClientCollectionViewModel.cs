@@ -18,8 +18,7 @@ namespace De.HsFlensburg.ClientApp048.Logic.Ui.Wrapper
                 var modelPropChanged = cvm.Model as INotifyPropertyChanged;
                 if(modelPropChanged != null)
                 {
-                    //????
-                    //modelPropChanged.PropertyChanged += cvm.PropertyChanged;
+                    modelPropChanged.PropertyChanged += cvm.OnPropertyChangedInModel;
                 }
             }
         }

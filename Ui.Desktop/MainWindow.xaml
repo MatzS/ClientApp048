@@ -26,7 +26,7 @@
             <TextBox VerticalAlignment="Center" Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Name}"></TextBox>
             <Button Command="{Binding RenameValueInModelCommand}">Rename First Item</Button>
             <Button Click="OpenClientWindow">OpenClientWindow</Button>
-            <Button Command="{Binding SaveCommannd}">Save</Button>
+            <Button Command="{Binding SaveCommand}">Save</Button>
             <Button Command="{Binding LoadCommand}">Load</Button>
         </UniformGrid>
         <DataGrid Grid.Column="1" Name="myDataGrid" ItemsSource="{Binding Path=MyList}">
