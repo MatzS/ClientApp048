@@ -25,23 +25,5 @@ namespace De.HsFlensburg.ClientApp048.Ui.Desktop
         {
             InitializeComponent();
         }
-
-        private void DebugMainWindow(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var collection = this.myDataGrid.ItemsSource as ClientCollectionViewModel;
-            var first = collection.FirstOrDefault();
-            first.Model.Name = "Rename in the model";
-        }
-
-        private void OpenClientWindow(object sender, RoutedEventArgs e)
-        {
-            NewClientWindow myWindow = new NewClientWindow();
-            myWindow.ShowDialog();
-        }
     }
 }

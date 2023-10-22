@@ -8,12 +8,15 @@
         xmlns:viewmodels ="clr-namespace:De.HsFlensburg.ClientApp048.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
-    <Window.Resources>
+    <!--<Window.Resources>
         <viewmodels:MainWindowViewModel x:Key="myViewModel"></viewmodels:MainWindowViewModel>
-    </Window.Resources>
+    </Window.Resources>-->
     <Window.DataContext>
-        <Binding Source="{StaticResource myViewModel}"></Binding>
+        <Binding Source="{StaticResource ViewModellocator}" Path="TheMainWindowViewModel"></Binding>
     </Window.DataContext>
+    <Window.IsEnabled>
+        <Binding Source="{StaticResource MessageListener}" Path="BindableProperty"></Binding>
+    </Window.IsEnabled>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -25,7 +28,7 @@
             <Label VerticalAlignment="Center" HorizontalAlignment="Right">Name</Label>
             <TextBox VerticalAlignment="Center" Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Name}"></TextBox>
             <Button Command="{Binding RenameValueInModelCommand}">Rename First Item</Button>
-            <Button Click="OpenClientWindow">OpenClientWindow</Button>
+            <Button Command="{Binding OpenNewClientWindowCommand}">OpenClientWindow</Button>
             <Button Command="{Binding SaveCommand}">Save</Button>
             <Button Command="{Binding LoadCommand}">Load</Button>
         </UniformGrid>
